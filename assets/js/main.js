@@ -22,7 +22,7 @@
         $.ajax({
             type: "POST",
             url: API_URL,
-            data: JSON.stringify(query),
+            data: JSON.stringify({text: query}),
             headers: HEADERS,
             dataType: JSON,
             success: function (data) {
