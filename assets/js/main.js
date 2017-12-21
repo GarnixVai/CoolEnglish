@@ -13,20 +13,25 @@
         var text = $('#enterValue').val();
         //send to server and process response
         gec_it_post(text);
-        console.log(text);
+       
     });
 
     function gec_it_post(query){
+        console.log(query)
         $.ajax({
             type: "POST",
             url: API_URL,
-            data: JSON.stringify({text: query}),
+            data: JSON.stringify(query),
             headers: HEADERS,
             dataType: JSON,
             success: function (data) {
+                console.log("success")
                 console.info(data);
-            }
-          });
+            }, 
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                console.log("Status: " + textStatus); alert("Error: " + errorThrown); 
+            } 
+          })
     }
 
 
