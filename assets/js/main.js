@@ -6,7 +6,7 @@
 
 (function($) {
     API_URL = 'http://nlp-ryze.cs.nthu.edu.tw:1214/translate/'
-    API_URL_1 = 'http://nlp-ryze.cs.nthu.edu.tw:1215/translate/'
+    //API_URL_1 = 'http://nlp-ryze.cs.nthu.edu.tw:1215/translate/'
     HEADERS = {'Content-Type': 'application/json; charset=UTF-8'}
 
     $('#submitB').click(function() {
@@ -18,18 +18,21 @@
 
     function gec_it_post(query){
         console.log(query)
+        document.getElementById("show-box").textContent = "result:"+query;
         $.ajax({
             type: "POST",
             url: API_URL,
             data: JSON.stringify(query),
-            headers: HEADERS,
+            headers: {'Content-Type': 'application/json; charset=UTF-8'},
             dataType: JSON,
             success: function (data) {
                 console.log("success")
                 console.info(data);
+                document.getElementById("show-box").textContent = "result:"+data.result;
             }, 
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
-                console.log("Status: " + textStatus); alert("Error: " + errorThrown); 
+                console.log("Status: " + textStatus); 
+                console.log("Error: " + errorThrown); 
             } 
           })
     }
