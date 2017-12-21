@@ -23,7 +23,7 @@
             type: "POST",
             url: API_URL,
             data: JSON.stringify(query),
-            headers: {'Content-Type': 'application/json; charset=UTF-8'},
+            headers: HEADERS,
             dataType: JSON,
             success: function (data) {
                 console.log("success")

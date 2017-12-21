@@ -148,7 +148,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
             }
 
                 #header nav ul li a:hover {
-                    background-color: rgba(175, 213, 238, 0.075);
+                    background-color: rgba(238, 175, 233, 0.075);
                 }
 
                 #header nav ul li a:active {
@@ -379,12 +379,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
         }
 
         #main article .close:hover:before {
-            background-color: rgba(20, 14, 14, 0.35);
+            background-color: rgba(75, 72, 75, 0.096);
         }
        
 
         #main article .close:active:before {
-            background-color: rgba(20, 15, 15, 0.35);
+            background-color: rgba(63, 62, 63, 0.247);
         }
       
 
