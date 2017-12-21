@@ -17,8 +17,7 @@
     });
 
     function gec_it_post(query){
-        console.log(query)
-        document.getElementById("show-box").textContent = "result:"+query;
+        // document.getElementById("show-box").textContent = "result:"+query;
         $.ajax({
             type: "POST",
             url: API_URL,
@@ -28,7 +27,7 @@
             success: function (data) {
                 console.log("success")
                 console.info(data);
-                document.getElementById("show-box").textContent = "result:"+data.result;
+                document.getElementById("show-box").textContent = data.result;
             }, 
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 console.log("Status: " + textStatus); 
