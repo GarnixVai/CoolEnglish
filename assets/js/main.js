@@ -4,11 +4,6 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-
-
-
-// Below is the style 
-
 (function($) {
     API_URL = 'http://nlp-ryze.cs.nthu.edu.tw:1214/translate/'
     API_URL_1 = 'http://nlp-ryze.cs.nthu.edu.tw:1215/translate/'
@@ -32,13 +27,6 @@
                 console.info(data);
             }
           });
-
-        // data = json.dumps({'text': query})
-        // r = requests.post(url, headers=HEADERS, data=data)
-        // if (r.status_code == 200){
-        //     return r.json().get('result', '')
-        // }
-        // return [];
     }
 
 
