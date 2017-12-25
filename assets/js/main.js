@@ -27,14 +27,17 @@
             success: function (data) {
                 console.log("success")
                 console.info(data);
-                document.getElementById("show-box").textContent = data.result;
+                document.getElementById("show-text").textContent = data.result;
             }, 
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 console.log("Status: " + textStatus); 
                 console.log("Error: " + errorThrown); 
             } 
           })
-    }
+	}
+	// $( "#show-text:empty" )
+	// 	.text( "Was empty!" )
+	// 	.css( "background", "rgb(255,220,200)" );
 
 
 	skel.breakpoints({
