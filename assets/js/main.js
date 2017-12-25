@@ -23,7 +23,7 @@
             url: API_URL,
             data: JSON.stringify({text: query}),
             headers: HEADERS,
-            dataType: JSON,
+            dataType: 'json',
             success: function (data) {
                 console.log("success")
                 console.info(data);
