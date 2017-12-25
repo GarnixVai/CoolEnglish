@@ -41,13 +41,14 @@
 	// 	.text( "Was empty!" )
 	// 	.css( "background", "rgb(255,220,200)" );
 	
-	  $( "#enterValue" ).change(function(){
+	  $( "#enterValue" ).on('input',function(e){
 		  var v = $('textarea#enterValue').val();
 		  if(v==""){
-			alert("empty");
 			$( "#show-box" )
 			.css( "border", "none" );
 			document.getElementById("show-text").textContent = "";
+			$( "#show-box" )
+			.css( 'border', 'none' );
 		  }
 	  });
 
