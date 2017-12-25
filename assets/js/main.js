@@ -12,10 +12,12 @@
     $('#submitB').click(function() {
         var text = $('#enterValue').val();
         //send to server and process response
-        gec_it_post(text);
+		gec_it_post(text);
+		$( "#show-box" )
+		.css( 'border', 'solid 0.01em rgb(204, 230, 245)' );
        
-    });
-
+	});
+	
     function gec_it_post(query){
         // document.getElementById("show-box").textContent = "result:"+query;
         $.ajax({
@@ -38,7 +40,16 @@
 	// $( "#show-text:empty" )
 	// 	.text( "Was empty!" )
 	// 	.css( "background", "rgb(255,220,200)" );
-
+	
+	  $( "#enterValue" ).change(function(){
+		  var v = $('textarea#enterValue').val();
+		  if(v==""){
+			alert("empty");
+			$( "#show-box" )
+			.css( "border", "none" );
+			document.getElementById("show-text").textContent = "";
+		  }
+	  });
 
 	skel.breakpoints({
 		xlarge:		'(max-width: 1680px)',
@@ -50,6 +61,8 @@
 	});
 
 	$(function() {
+		
+	
 
 		var	$window = $(window),
 			$body = $('body'),
