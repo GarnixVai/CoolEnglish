@@ -5,7 +5,8 @@
 */
 
 (function($) {
-    API_URL = 'http://nlp-ryze.cs.nthu.edu.tw:1214/translate/'
+	API_URL = 'http://nlp-ryze.cs.nthu.edu.tw:1214/translate/'
+	API_URL1 = 'https://fathomless-wave-32876.herokuapp.com/messages'
     //API_URL_1 = 'http://nlp-ryze.cs.nthu.edu.tw:1215/translate/'
     HEADERS = {'Content-Type': 'application/json; charset=UTF-8'}
 
@@ -22,7 +23,7 @@
         // document.getElementById("show-box").textContent = "result:"+query;
         $.ajax({
             type: "POST",
-            url: API_URL,
+            url: API_URL1,
             data: JSON.stringify({text: query}),
             headers: HEADERS,
             dataType: 'json',
