@@ -437,6 +437,17 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
     padding: 0.5em 0.5em 0.5em 0.5em;
 }
 
+/* for edited word */
+.correction {
+    color: #00a722;
+}
+
+.deletion {
+    color: #d40000;
+    text-decoration: line-through;
+}
+
+
  .field-style{
     box-sizing: border-box; 
     -webkit-box-sizing: border-box;

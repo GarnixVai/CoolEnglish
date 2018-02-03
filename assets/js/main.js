@@ -8,7 +8,7 @@
 	API_URL = 'http://nlp-ryze.cs.nthu.edu.tw:1214/translate/'
 	API_URL1 = 'https://fathomless-wave-32876.herokuapp.com/messages'
     //API_URL_1 = 'http://nlp-ryze.cs.nthu.edu.tw:1215/translate/'
-    HEADERS = {'Content-Type': 'application/json; charset=UTF-8'}
+    HEADERS = {'Content-Type': 'application/json; charset=UTF-8', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': '*'}
 
     $('#submitB').click(function() {
         var text = $('#enterValue').val();
@@ -28,9 +28,15 @@
             headers: HEADERS,
             dataType: 'json',
             success: function (data) {
-                console.log("success")
-                console.info(data);
-                document.getElementById("show-text").textContent = data.result;
+                // console.log("success")
+				console.info(data);
+				var content = data.word_diff.replace(/\[-(.*?)-\]/g,
+				'<span class="deletion">$1</span>').
+				replace(/\{\+(.+?)\+\}/g, '<span class="correction">$1</span>');
+				console.log(content);
+				// $('#correct-sec').html(content);
+				document.getElementById("show-text").innerHTML = content;
+                // document.getElementById("show-text").textContent = content.result;
             }, 
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
                 console.log("Status: " + textStatus); 
