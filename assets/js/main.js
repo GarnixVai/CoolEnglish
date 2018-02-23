@@ -29,13 +29,27 @@
             dataType: 'json',
             success: function (data) {
                 // console.log("success")
-				console.info(data);
-				var content = data.word_diff.replace(/\[-(.*?)-\]/g,
-				'<span class="deletion">$1</span>').
-				replace(/\{\+(.+?)\+\}/g, '<span class="correction">$1</span>');
-				console.log(content);
+				console.info('data word diff:');
+				console.info(data.word_diff_by_sent);
+				var obj = data.word_diff_by_sent;
+				var all = "";
+				for(var i = 0; i < obj.length; i ++){
+					var content = obj[i].replace(/\[-(.*?)-\]/g,
+					'<span class="deletion">$1</span>').
+					replace(/\{\+(.+?)\+\}/g, '<span class="correction">$1</span>');
+					if(i == 0){
+						all = content;
+					} else {
+						all = all + "<br>" + content;
+					}
+				
+				}
+				// var content = data.word_diff.replace(/\[-(.*?)-\]/g,
+				// '<span class="deletion">$1</span>').
+				// replace(/\{\+(.+?)\+\}/g, '<span class="correction">$1</span>');
+				// console.log(content);
 				// $('#correct-sec').html(content);
-				document.getElementById("show-text").innerHTML = content;
+				document.getElementById("show-text").innerHTML = all;
                 // document.getElementById("show-text").textContent = content.result;
             }, 
             error: function(XMLHttpRequest, textStatus, errorThrown) { 
